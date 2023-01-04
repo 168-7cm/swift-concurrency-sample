@@ -16,6 +16,8 @@
 		BBEB0C902965C04E00E71B01 /* swift_concurrency_sampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEB0C8F2965C04E00E71B01 /* swift_concurrency_sampleTests.swift */; };
 		BBEB0C9A2965C04E00E71B01 /* swift_concurrency_sampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEB0C992965C04E00E71B01 /* swift_concurrency_sampleUITests.swift */; };
 		BBEB0C9C2965C04E00E71B01 /* swift_concurrency_sampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEB0C9B2965C04E00E71B01 /* swift_concurrency_sampleUITestsLaunchTests.swift */; };
+		BBEB0CAA2965C23C00E71B01 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEB0CA92965C23C00E71B01 /* APIClient.swift */; };
+		BBEB0CAC2965C25D00E71B01 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEB0CAB2965C25D00E71B01 /* Requestable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		BBEB0C952965C04E00E71B01 /* swift-concurrency-sampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swift-concurrency-sampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBEB0C992965C04E00E71B01 /* swift_concurrency_sampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift_concurrency_sampleUITests.swift; sourceTree = "<group>"; };
 		BBEB0C9B2965C04E00E71B01 /* swift_concurrency_sampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift_concurrency_sampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BBEB0CA92965C23C00E71B01 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		BBEB0CAB2965C25D00E71B01 /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 		BBEB0C772965C04D00E71B01 /* swift-concurrency-sample */ = {
 			isa = PBXGroup;
 			children = (
+				BBEB0CA82965C1B600E71B01 /* APIClient */,
 				BBEB0C782965C04D00E71B01 /* AppDelegate.swift */,
 				BBEB0C7A2965C04D00E71B01 /* SceneDelegate.swift */,
 				BBEB0C7C2965C04D00E71B01 /* ViewController.swift */,
@@ -125,6 +130,15 @@
 				BBEB0C9B2965C04E00E71B01 /* swift_concurrency_sampleUITestsLaunchTests.swift */,
 			);
 			path = "swift-concurrency-sampleUITests";
+			sourceTree = "<group>";
+		};
+		BBEB0CA82965C1B600E71B01 /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				BBEB0CA92965C23C00E71B01 /* APIClient.swift */,
+				BBEB0CAB2965C25D00E71B01 /* Requestable.swift */,
+			);
+			path = APIClient;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +272,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBEB0CAC2965C25D00E71B01 /* Requestable.swift in Sources */,
 				BBEB0C7D2965C04D00E71B01 /* ViewController.swift in Sources */,
 				BBEB0C792965C04D00E71B01 /* AppDelegate.swift in Sources */,
 				BBEB0C7B2965C04D00E71B01 /* SceneDelegate.swift in Sources */,
+				BBEB0CAA2965C23C00E71B01 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

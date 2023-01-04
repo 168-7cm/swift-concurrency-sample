@@ -13,6 +13,22 @@ final class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
+    }
+
+    private func setup() {
+        tableView.register(cellType: UITableViewCell.self, bundle: nil)
+        tableView.delegate = self
+        tableView.dataSource = self
     }
 }
 
+extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+}

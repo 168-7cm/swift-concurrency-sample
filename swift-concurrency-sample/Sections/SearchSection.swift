@@ -7,12 +7,25 @@
 
 import Foundation
 
-enum SearchSectionHeader {
+enum SearchSectionHeader: Hashable {
     case repositories(title: String)
     case users(title: String)
 }
 
-enum SearchSectionItem {
+enum SearchSectionItem: Hashable {
     case repositories(item: SearchRepositoryResponse)
     case users(item: SearchUserResponse)
+
+    static func == (lhs: SearchSectionItem, rhs: SearchSectionItem) -> Bool {
+        return lhs.hashValue == rhs.hashValue
+    }
+
+    func hash(into hasher: inout Hasher) {
+        switch self {
+        case .repositories(let item):
+            hasher.combine("repositories")
+        case .users(let item):
+            hasher.combine("users")
+        }
+    }
 }

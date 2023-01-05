@@ -19,19 +19,18 @@ protocol Requestable {
     var url: String { get }
     var httpMethod: HttpMethod { get }
     var headers: Headers { get }
-    var body: Data? { get }
+    var parameters: [String: String?] { get }
     func decode(from data: Data) throws -> Response
 }
 
 extension Requestable {
     var urlRequest: URLRequest? {
-        guard let url = URL(string: url) else { return nil }
+        var component = URLComponents(string: url)
+        component?.queryItems = parameters.map { URLQueryItem(name: $0, value: $1) }
+        guard let url = component?.url else { return nil }
         var request = URLRequest(url: url)
         request.httpMethod = httpMethod.rawValue
-        headers.forEach { key, value in
-            request.addValue(value, forHTTPHeaderField: key)
-        }
-        request.httpBody = body
+        headers.forEach { key, value in request.addValue(value, forHTTPHeaderField: key) }
         return request
     }
 }

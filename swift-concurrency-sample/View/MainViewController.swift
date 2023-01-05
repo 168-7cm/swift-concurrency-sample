@@ -8,12 +8,18 @@
 import UIKit
 
 final class MainViewController: UIViewController {
-
     @IBOutlet private weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+
+        Task {
+            var request = GithubSearchRequest()
+            request.query = "swift"
+            let result = await APIClient.request(request)
+            print(result)
+        }
     }
 
     private func setup() {

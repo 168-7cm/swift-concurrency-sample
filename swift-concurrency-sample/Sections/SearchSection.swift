@@ -13,8 +13,8 @@ enum SearchSectionHeader: Hashable {
 }
 
 enum SearchSectionItem: Hashable {
-    case repositories(item: SearchRepositoryResponse)
-    case users(item: SearchUserResponse)
+    case repositories(item: Repository)
+    case users(item: User)
 
     static func == (lhs: SearchSectionItem, rhs: SearchSectionItem) -> Bool {
         return lhs.hashValue == rhs.hashValue
@@ -23,9 +23,9 @@ enum SearchSectionItem: Hashable {
     func hash(into hasher: inout Hasher) {
         switch self {
         case .repositories(let item):
-            hasher.combine("repositories")
+            hasher.combine(item.id)
         case .users(let item):
-            hasher.combine("users")
+            hasher.combine(item.id)
         }
     }
 }

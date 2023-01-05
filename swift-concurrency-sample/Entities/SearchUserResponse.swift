@@ -8,21 +8,13 @@
 import UIKit
 
 struct SearchUserResponse: Decodable {
-    let totalCount: Int?
-    let items: [User]?
-
-    static var empty: SearchUserResponse {
-        return SearchUserResponse(totalCount: nil, items: nil)
-    }
+    let totalCount: Int
+    let items: [User]
 }
 
 
 struct User: Decodable, Hashable, Identifiable {
-    let login: String?
-    let id: Int?
-    let avatarUrl: String?
-
-    static var empty: User {
-        return User(login: nil, id: nil, avatarUrl: nil)
-    }
+    let login: String
+    let id: Int
+    let avatarUrl: String
 }

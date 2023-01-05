@@ -8,26 +8,18 @@
 import UIKit
 
 struct SearchRepositoryResponse: Decodable {
-    let totalCount: Int?
-    let items: [Repository]?
-
-    static var empty: SearchRepositoryResponse {
-        return SearchRepositoryResponse(totalCount: nil, items: nil)
-    }
+    let totalCount: Int
+    let items: [Repository]
 }
 
 struct Repository: Decodable, Hashable, Identifiable {
-    let id: Int?
-    let name: String?
-    let description: String?
-    let stargazersCount: Int?
-    let language: String?
-    let htmlUrl: String?
-    let owner: Owner?
-
-    static var empty: Repository {
-        return Repository(id: nil, name: nil, description: nil, stargazersCount: nil, language: nil, htmlUrl: nil, owner: nil)
-    }
+    let id: Int
+    let name: String
+    let description: String
+    let stargazersCount: Int
+    let language: String
+    let htmlUrl: String
+    let owner: Owner
 }
 
 struct Owner: Decodable, Hashable, Identifiable {

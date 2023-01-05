@@ -7,14 +7,7 @@
 
 import Foundation
 
-protocol RequestParameter {}
-
-struct GithubSearchRequestParameter: RequestParameter {
-    let q: String
-    let order: String
-}
-
-struct GithubSearchRequest: Requestable {
+struct SearchRepositoryRequest: Requestable {
     typealias Response = SearchRepositoryResponse
 
     var query: String?

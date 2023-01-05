@@ -15,10 +15,10 @@ final class MainViewController: UIViewController {
         setup()
 
         Task {
-            var request = GithubSearchRequest()
-            request.query = "swift"
-            let result = await APIClient.request(request)
-            print(result)
+            let searchRepositoryRequest = SearchRepositoryRequest(query: "swift")
+            let repository = await APIClient.request(searchRepositoryRequest)
+            let searchUserRequest = SearchUserRequest(query: "a")
+            let user = await APIClient.request(searchUserRequest)
         }
     }
 

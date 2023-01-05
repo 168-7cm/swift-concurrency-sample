@@ -96,13 +96,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BBC773542965C8E500EDB7CC /* Views */ = {
+		BBC773542965C8E500EDB7CC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				BBEB0C7E2965C04D00E71B01 /* Main.storyboard */,
 				BBEB0C7C2965C04D00E71B01 /* MainViewController.swift */,
 			);
-			path = Views;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		BBC773552965CA5A00EDB7CC /* Extensions */ = {
@@ -162,7 +162,7 @@
 		BBEB0C772965C04D00E71B01 /* swift-concurrency-sample */ = {
 			isa = PBXGroup;
 			children = (
-				BBC773542965C8E500EDB7CC /* Views */,
+				BBC773542965C8E500EDB7CC /* ViewControllers */,
 				BBC7735A2965CBB200EDB7CC /* ViewModels */,
 				BBEB0CA82965C1B600E71B01 /* APIClient */,
 				BBC773642966692700EDB7CC /* Entities */,

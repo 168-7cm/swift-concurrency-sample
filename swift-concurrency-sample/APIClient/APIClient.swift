@@ -16,7 +16,7 @@ enum ApiError: Error {
     case server(ResponseErrorReason)
     case decode(Error)
     case noResponse
-    case unknown(Error)
+    case unknown
     case invalidUrl
 }
 
@@ -24,35 +24,30 @@ final class APIClient {
     static let shared = APIClient()
     private init() {}
 
-    static func request<T: Requestable>(_ requestable: T) async -> Result<T.Response, ApiError> {
-        guard let request = requestable.urlRequest else { return .failure(ApiError.invalidUrl) }
+    func request<T: Requestable>(_ requestable: T) async throws -> T.Response {
+        guard let request = requestable.urlRequest else { throw ApiError.invalidUrl }
 
-        do {
-            let (data, response) = try await URLSession.shared.data(for: request)
+        let (data, response) = try await URLSession.shared.data(for: request)
 
-            guard let httpStatus = response as? HTTPURLResponse else { return .failure(ApiError.noResponse) }
+        guard let httpStatus = response as? HTTPURLResponse else { throw ApiError.noResponse }
 
-            switch httpStatus.statusCode {
-            case 200 ..< 400:
-                do {
-                    let model = try requestable.decode(from: data)
-                    return .success(model)
-                } catch {
-                    return .failure(ApiError.decode(error))
-                }
-            case 400... :
-                let errorResponse = makeErrorResponse(data: data, statusCode: httpStatus.statusCode)
-                return .failure(ApiError.server(errorResponse))
-            default:
-                fatalError()
-                break
+        switch httpStatus.statusCode {
+        case 200 ..< 400:
+            do {
+                let model = try requestable.decode(from: data)
+                return model
+            } catch {
+                throw ApiError.decode(error)
             }
-        } catch {
-            return .failure(ApiError.unknown(error))
+        case 400... :
+            let errorResponse = makeErrorResponse(data: data, statusCode: httpStatus.statusCode)
+            throw ApiError.server(errorResponse)
+        default:
+            throw ApiError.unknown
         }
     }
 
-    static func makeErrorResponse(data: Data, statusCode: Int) -> ResponseErrorReason {
+    func makeErrorResponse(data: Data, statusCode: Int) -> ResponseErrorReason {
         let errorJSON = try? JSONSerialization.jsonObject(with: data) as? [String: String]
         return ResponseErrorReason(statusCode: statusCode, message: errorJSON?["error"])
     }

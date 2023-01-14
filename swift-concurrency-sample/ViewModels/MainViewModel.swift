@@ -17,12 +17,12 @@ final class MainViewModel {
         do {
             let request = SearchRepositoryRequest(query: "swift")
             let repositories = try await APIClient.shared.request(request)
-            let snapshot = makeSnapshot(repositories: repositories.items)
+            let snapshot = makeSnapshot(repositories: repositories.repositories)
             await self.repositories(snapshot)
         } catch {}
     }
 
-    nonisolated private func makeSnapshot(repositories: [Repository]) -> NSDiffableDataSourceSnapshot<SearchSectionHeader, SearchSectionItem> {
+    nonisolated private func makeSnapshot(repositories: [RepositoryEntity]) -> NSDiffableDataSourceSnapshot<SearchSectionHeader, SearchSectionItem> {
         let items = repositories.map { SearchSectionItem.repositories(item: $0) }
         var snapshot = NSDiffableDataSourceSnapshot<SearchSectionHeader, SearchSectionItem>()
         snapshot.appendSections([.repositories(title: "レポジトリ")])

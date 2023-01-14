@@ -13,8 +13,8 @@ enum SearchSectionHeader: Hashable {
 }
 
 enum SearchSectionItem: Hashable {
-    case repositories(item: Repository)
-    case users(item: User)
+    case repositories(item: RepositoryEntity)
+    case users(item: UserEntity)
 
     static func == (lhs: SearchSectionItem, rhs: SearchSectionItem) -> Bool {
         return lhs.hashValue == rhs.hashValue

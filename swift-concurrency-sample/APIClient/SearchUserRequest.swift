@@ -8,7 +8,7 @@
 import Foundation
 
 struct SearchUserRequest: Requestable {
-    typealias Response = SearchUserResponse
+    typealias Response = UserResponseEntity
 
     var query: String?
 
@@ -30,9 +30,9 @@ struct SearchUserRequest: Requestable {
         return ["q": query]
     }
 
-    func decode(from data: Data) throws -> SearchUserResponse {
+    func decode(from data: Data) throws -> UserResponseEntity {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
-        return try decoder.decode(SearchUserResponse.self, from: data)
+        return try decoder.decode(UserResponseEntity.self, from: data)
     }
 }

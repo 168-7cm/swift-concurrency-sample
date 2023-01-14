@@ -9,6 +9,7 @@ import UIKit
 
 @MainActor
 final class MainViewModel {
+    /// TODO: typealiasの設定
     var repositories: (NSDiffableDataSourceSnapshot<ProgrammingLanguageSection, ProgrammingLanguageItem>) -> Void = { _ in }
     var users: (NSDiffableDataSourceSnapshot<Section, Section>) -> Void = { _ in }
     var showError: (ApiError) ->  Void = { _ in }
@@ -24,6 +25,7 @@ final class MainViewModel {
         }
     }
 
+    /// TODO: もっと綺麗に書ける
     nonisolated private func makeSnapshot(repositories: [RepositoryEntity]) -> NSDiffableDataSourceSnapshot<ProgrammingLanguageSection, ProgrammingLanguageItem> {
         var snapshot = NSDiffableDataSourceSnapshot<ProgrammingLanguageSection, ProgrammingLanguageItem>()
         snapshot.appendSections(ProgrammingLanguageSection.allCases)

@@ -12,6 +12,9 @@ final class MainViewController: UIViewController {
 
     private let viewModel = MainViewModel()
 
+    /// TODO: メソッド化する
+    /// TODO: Cellの再利用
+
     private lazy var tableViewDataSource = UITableViewDiffableDataSource<ProgrammingLanguageSection, ProgrammingLanguageItem>(tableView: tableView) {
         (tableView: UITableView, indexPath: IndexPath, item: ProgrammingLanguageItem) -> UITableViewCell in
         switch item {
@@ -48,6 +51,7 @@ final class MainViewController: UIViewController {
         tableView.dataSource = tableViewDataSource
     }
 
+    /// TODO: Combine使ってやる？？
     private func bind() {
         viewModel.repositories = { [weak self] snapshot in
             self?.tableViewDataSource.apply(snapshot)

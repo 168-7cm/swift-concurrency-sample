@@ -9,8 +9,8 @@ import UIKit
 
 @MainActor
 final class MainViewModel {
-    var repositories: (NSDiffableDataSourceSnapshot<SearchSectionHeader, SearchSectionItem>) -> Void = { _ in }
-    var users: (NSDiffableDataSourceSnapshot<SearchSectionHeader, SearchSectionItem>) -> Void = { _ in }
+    var repositories: (NSDiffableDataSourceSnapshot<ProgrammingLanguageSection, ProgrammingLanguageItem>) -> Void = { _ in }
+    var users: (NSDiffableDataSourceSnapshot<Section, Section>) -> Void = { _ in }
     var showError: (ApiError) ->  Void = { _ in }
 
     nonisolated func fetchRepositories() async {
@@ -19,14 +19,18 @@ final class MainViewModel {
             let repositories = try await APIClient.shared.request(request)
             let snapshot = makeSnapshot(repositories: repositories.repositories)
             await self.repositories(snapshot)
-        } catch {}
+        } catch {
+            print(error)
+        }
     }
 
-    nonisolated private func makeSnapshot(repositories: [RepositoryEntity]) -> NSDiffableDataSourceSnapshot<SearchSectionHeader, SearchSectionItem> {
-        let items = repositories.map { SearchSectionItem.repositories(item: $0) }
-        var snapshot = NSDiffableDataSourceSnapshot<SearchSectionHeader, SearchSectionItem>()
-        snapshot.appendSections([.repositories(title: "レポジトリ")])
-        snapshot.appendItems(items)
+    nonisolated private func makeSnapshot(repositories: [RepositoryEntity]) -> NSDiffableDataSourceSnapshot<ProgrammingLanguageSection, ProgrammingLanguageItem> {
+        var snapshot = NSDiffableDataSourceSnapshot<ProgrammingLanguageSection, ProgrammingLanguageItem>()
+        snapshot.appendSections(ProgrammingLanguageSection.allCases)
+        let swiftItems: [ProgrammingLanguageItem] = repositories.filter { $0.language == .swift }.map { .swift(items: $0) }
+        let otherItems: [ProgrammingLanguageItem] = repositories.filter { $0.language == .other }.map { .other(items: $0) }
+        snapshot.appendItems(swiftItems, toSection: .swift)
+        snapshot.appendItems(otherItems, toSection: .other)
         return snapshot
     }
 }

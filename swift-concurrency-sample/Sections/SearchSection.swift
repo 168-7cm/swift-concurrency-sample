@@ -7,25 +7,40 @@
 
 import Foundation
 
-enum SearchSectionHeader: Hashable {
+enum ProgrammingLanguageSection: CaseIterable {
+    case swift
+    case kotlin
+    case python
+    case other
+}
+
+enum ProgrammingLanguageItem: Hashable {
+    case swift(items: RepositoryEntity)
+    case kotlin(items: RepositoryEntity)
+    case python(items: RepositoryEntity)
+    case other(items: RepositoryEntity)
+}
+
+enum Header: Hashable {
     case repositories(title: String)
     case users(title: String)
 }
 
-enum SearchSectionItem: Hashable {
-    case repositories(item: RepositoryEntity)
-    case users(item: UserEntity)
+enum Section: CaseIterable {
+    case repository
+}
 
-    static func == (lhs: SearchSectionItem, rhs: SearchSectionItem) -> Bool {
-        return lhs.hashValue == rhs.hashValue
-    }
+enum Item: Hashable {
+    case repository(items: RepositoryEntity)
 
-    func hash(into hasher: inout Hasher) {
-        switch self {
-        case .repositories(let item):
-            hasher.combine(item.id)
-        case .users(let item):
-            hasher.combine(item.id)
-        }
-    }
+//    static func == (lhs: Item, rhs: Item) -> Bool {
+//        return lhs.hashValue == rhs.hashValue
+//    }
+//
+//    func hash(into hasher: inout Hasher) {
+//        switch self {
+//        case let .repository(item):
+//            hasher.combine(item.id)
+//        }
+//    }
 }

@@ -12,15 +12,25 @@ final class MainViewController: UIViewController {
 
     private let viewModel = MainViewModel()
 
-    private lazy var tableViewDataSource: UITableViewDiffableDataSource<SearchSectionHeader, SearchSectionItem> = .init(tableView: tableView) {
-        (tableView: UITableView, indexPath: IndexPath, item: SearchSectionItem) -> UITableViewCell in
+    private lazy var tableViewDataSource = UITableViewDiffableDataSource<ProgrammingLanguageSection, ProgrammingLanguageItem>(tableView: tableView) {
+        (tableView: UITableView, indexPath: IndexPath, item: ProgrammingLanguageItem) -> UITableViewCell in
         switch item {
-        case .repositories(let item):
+        case let .swift(item):
             let cell = UITableViewCell()
-            cell.textLabel?.text = item.name
+            cell.textLabel?.text = item.language.displayText
             return cell
-        case .users(let item):
-            return UITableViewCell()
+        case let .kotlin(item):
+            let cell = UITableViewCell()
+            cell.textLabel?.text = item.language.displayText
+            return cell
+        case let .python(item):
+            let cell = UITableViewCell()
+            cell.textLabel?.text = item.language.displayText
+            return cell
+        case let .other(item):
+            let cell = UITableViewCell()
+            cell.textLabel?.text = item.language.displayText
+            return cell
         }
     }
 

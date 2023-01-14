@@ -14,7 +14,7 @@ final class MainViewController: UIViewController {
 
     /// TODO: メソッド化する
     /// TODO: Cellの再利用
-
+    /// TODO: CompositonalLayout + CollectionView に変更して、横スクロールにする
     private lazy var tableViewDataSource = UITableViewDiffableDataSource<ProgrammingLanguageSection, ProgrammingLanguageItem>(tableView: tableView) {
         (tableView: UITableView, indexPath: IndexPath, item: ProgrammingLanguageItem) -> UITableViewCell in
         switch item {

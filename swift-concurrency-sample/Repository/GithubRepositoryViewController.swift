@@ -14,6 +14,7 @@ final class GithubRepositoryViewController: UIViewController {
 
     /// TODO: CompositonalLayout + CollectionView に変更して、横スクロールにする
     private lazy var collectionViewDataSource = makeDataSource()
+    private lazy var layout = makeCompositionalLayout()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,7 @@ final class GithubRepositoryViewController: UIViewController {
     private func setup() {
         collectionView.register(cellType: GithubRepositoryCell.self, bundle: nil)
         collectionView.dataSource = collectionViewDataSource
+        collectionView.collectionViewLayout = layout
     }
 
     /// TODO: Combine使ってやる？？
@@ -59,5 +61,25 @@ final class GithubRepositoryViewController: UIViewController {
                 return cell
             }
         }
+    }
+
+    /// 最低限のCompositionalLayoutを作成する
+    /// TODO: ヘッダーの付与、他セクションの追加、ページング時のローディング
+    private func makeCompositionalLayout() -> UICollectionViewCompositionalLayout {
+        let layout = UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
+
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
+            /// AutoLayoutを優先させたいため、.estimated(100)で設定する
+            let groupSize = NSCollectionLayoutSize(widthDimension: .estimated(100), heightDimension: .estimated(100))
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+
+            let section = NSCollectionLayoutSection(group: group)
+            section.interGroupSpacing = 8
+            section.orthogonalScrollingBehavior = .continuous
+            return section
+        }
+        return layout
     }
 }

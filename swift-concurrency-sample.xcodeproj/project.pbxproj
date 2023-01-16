@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BB1CE91729758E64008C69B4 /* ProgrammingLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1CE91629758E64008C69B4 /* ProgrammingLanguage.swift */; };
+		BB1CE91A29759177008C69B4 /* GithubRepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB1CE91929759177008C69B4 /* GithubRepositoryCell.xib */; };
+		BB1CE91C297591BD008C69B4 /* GithubRepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1CE91B297591BD008C69B4 /* GithubRepositoryCell.swift */; };
 		BBC773582965CA7D00EDB7CC /* UICollectionView+Xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC773562965CA7D00EDB7CC /* UICollectionView+Xib.swift */; };
 		BBC773592965CA7D00EDB7CC /* UITableView+Xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC773572965CA7D00EDB7CC /* UITableView+Xib.swift */; };
 		BBC7735C2965CBCC00EDB7CC /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC7735B2965CBCC00EDB7CC /* MainViewModel.swift */; };
@@ -18,8 +20,8 @@
 		BBC7736829666A8C00EDB7CC /* SearchUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC7736729666A8C00EDB7CC /* SearchUserRequest.swift */; };
 		BBEB0C792965C04D00E71B01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEB0C782965C04D00E71B01 /* AppDelegate.swift */; };
 		BBEB0C7B2965C04D00E71B01 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEB0C7A2965C04D00E71B01 /* SceneDelegate.swift */; };
-		BBEB0C7D2965C04D00E71B01 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEB0C7C2965C04D00E71B01 /* MainViewController.swift */; };
-		BBEB0C802965C04D00E71B01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBEB0C7E2965C04D00E71B01 /* Main.storyboard */; };
+		BBEB0C7D2965C04D00E71B01 /* GithubRepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEB0C7C2965C04D00E71B01 /* GithubRepositoryViewController.swift */; };
+		BBEB0C802965C04D00E71B01 /* GithubRepository.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBEB0C7E2965C04D00E71B01 /* GithubRepository.storyboard */; };
 		BBEB0C822965C04E00E71B01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBEB0C812965C04E00E71B01 /* Assets.xcassets */; };
 		BBEB0C852965C04E00E71B01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBEB0C832965C04E00E71B01 /* LaunchScreen.storyboard */; };
 		BBEB0C902965C04E00E71B01 /* swift_concurrency_sampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEB0C8F2965C04E00E71B01 /* swift_concurrency_sampleTests.swift */; };
@@ -48,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		BB1CE91629758E64008C69B4 /* ProgrammingLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammingLanguage.swift; sourceTree = "<group>"; };
+		BB1CE91929759177008C69B4 /* GithubRepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GithubRepositoryCell.xib; sourceTree = "<group>"; };
+		BB1CE91B297591BD008C69B4 /* GithubRepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepositoryCell.swift; sourceTree = "<group>"; };
 		BBC773562965CA7D00EDB7CC /* UICollectionView+Xib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Xib.swift"; sourceTree = "<group>"; };
 		BBC773572965CA7D00EDB7CC /* UITableView+Xib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Xib.swift"; sourceTree = "<group>"; };
 		BBC7735B2965CBCC00EDB7CC /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
@@ -59,8 +63,8 @@
 		BBEB0C752965C04D00E71B01 /* swift-concurrency-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-concurrency-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBEB0C782965C04D00E71B01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBEB0C7A2965C04D00E71B01 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BBEB0C7C2965C04D00E71B01 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		BBEB0C7F2965C04D00E71B01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BBEB0C7C2965C04D00E71B01 /* GithubRepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepositoryViewController.swift; sourceTree = "<group>"; };
+		BBEB0C7F2965C04D00E71B01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GithubRepository.storyboard; sourceTree = "<group>"; };
 		BBEB0C812965C04E00E71B01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBEB0C842965C04E00E71B01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBEB0C862965C04E00E71B01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -106,13 +110,24 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
-		BBC773542965C8E500EDB7CC /* ViewControllers */ = {
+		BB1CE91829759162008C69B4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				BBEB0C7E2965C04D00E71B01 /* Main.storyboard */,
-				BBEB0C7C2965C04D00E71B01 /* MainViewController.swift */,
+				BB1CE91929759177008C69B4 /* GithubRepositoryCell.xib */,
+				BB1CE91B297591BD008C69B4 /* GithubRepositoryCell.swift */,
 			);
-			path = ViewControllers;
+			path = Components;
+			sourceTree = "<group>";
+		};
+		BBC773542965C8E500EDB7CC /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				BBEB0C7E2965C04D00E71B01 /* GithubRepository.storyboard */,
+				BBEB0C7C2965C04D00E71B01 /* GithubRepositoryViewController.swift */,
+				BBC7735B2965CBCC00EDB7CC /* MainViewModel.swift */,
+				BB1CE91829759162008C69B4 /* Components */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		BBC773552965CA5A00EDB7CC /* Extensions */ = {
@@ -122,14 +137,6 @@
 				BBC773572965CA7D00EDB7CC /* UITableView+Xib.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		BBC7735A2965CBB200EDB7CC /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				BBC7735B2965CBCC00EDB7CC /* MainViewModel.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		BBC773612966683A00EDB7CC /* Sections */ = {
@@ -173,8 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				BB1CE91529758E48008C69B4 /* Enums */,
-				BBC773542965C8E500EDB7CC /* ViewControllers */,
-				BBC7735A2965CBB200EDB7CC /* ViewModels */,
+				BBC773542965C8E500EDB7CC /* Repository */,
 				BBEB0CA82965C1B600E71B01 /* APIClient */,
 				BBC773642966692700EDB7CC /* Entities */,
 				BBC773612966683A00EDB7CC /* Sections */,
@@ -320,9 +326,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB1CE91A29759177008C69B4 /* GithubRepositoryCell.xib in Resources */,
 				BBEB0C852965C04E00E71B01 /* LaunchScreen.storyboard in Resources */,
 				BBEB0C822965C04E00E71B01 /* Assets.xcassets in Resources */,
-				BBEB0C802965C04D00E71B01 /* Main.storyboard in Resources */,
+				BBEB0C802965C04D00E71B01 /* GithubRepository.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,10 +356,11 @@
 			files = (
 				BBEB0CAC2965C25D00E71B01 /* Requestable.swift in Sources */,
 				BB1CE91729758E64008C69B4 /* ProgrammingLanguage.swift in Sources */,
-				BBEB0C7D2965C04D00E71B01 /* MainViewController.swift in Sources */,
+				BBEB0C7D2965C04D00E71B01 /* GithubRepositoryViewController.swift in Sources */,
 				BBC7735E2965CCB900EDB7CC /* SearchRepositoryRequest.swift in Sources */,
 				BBC77366296669FC00EDB7CC /* UserResponseEntity.swift in Sources */,
 				BBC7736829666A8C00EDB7CC /* SearchUserRequest.swift in Sources */,
+				BB1CE91C297591BD008C69B4 /* GithubRepositoryCell.swift in Sources */,
 				BBEB0C792965C04D00E71B01 /* AppDelegate.swift in Sources */,
 				BBEB0C7B2965C04D00E71B01 /* SceneDelegate.swift in Sources */,
 				BBC773602965CD9200EDB7CC /* RepositoryResponseEntity.swift in Sources */,
@@ -397,12 +405,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BBEB0C7E2965C04D00E71B01 /* Main.storyboard */ = {
+		BBEB0C7E2965C04D00E71B01 /* GithubRepository.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				BBEB0C7F2965C04D00E71B01 /* Base */,
 			);
-			name = Main.storyboard;
+			name = GithubRepository.storyboard;
 			sourceTree = "<group>";
 		};
 		BBEB0C832965C04E00E71B01 /* LaunchScreen.storyboard */ = {
@@ -543,8 +551,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -571,8 +579,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -38,6 +38,7 @@ final class GithubRepositoryViewController: UIViewController {
         }
     }
 
+    /// TODO: 他のセクションの追加 + ヘッダーフッダーの追加
     private func makeDataSource() -> UICollectionViewDiffableDataSource<ProgrammingLanguageSection, ProgrammingLanguageItem> {
         return UICollectionViewDiffableDataSource<ProgrammingLanguageSection, ProgrammingLanguageItem>(collectionView: collectionView) {
             [weak self] (tableView: UICollectionView, indexPath: IndexPath, item: ProgrammingLanguageItem) -> UICollectionViewCell in
@@ -65,10 +66,12 @@ final class GithubRepositoryViewController: UIViewController {
 
     /// 最低限のCompositionalLayoutを作成する
     /// TODO: ヘッダーの付与、他セクションの追加、ページング時のローディング
+    /// CompositionalLayout で Self-Sizing するには、item と group のどちらも .estimated にする必要がある
+    /// ref: https://medium.com/swiftblade/dynamic-cell-height-in-uicollectionviewcompositionallayout-9b46d2032890
     private func makeCompositionalLayout() -> UICollectionViewCompositionalLayout {
         let layout = UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
 
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+            let itemSize = NSCollectionLayoutSize(widthDimension: .estimated(100), heightDimension: .estimated(100))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
             /// AutoLayoutを優先させたいため、.estimated(100)で設定する

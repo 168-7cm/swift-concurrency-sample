@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum ProgrammingLanguage: String, Decodable, CaseIterable {
     case swift
@@ -33,5 +34,18 @@ enum ProgrammingLanguage: String, Decodable, CaseIterable {
 extension ProgrammingLanguage {
     var displayText: String {
         return rawValue.capitalized
+    }
+
+    var backgroundColor: UIColor? {
+        switch self {
+        case .swift:
+            return .orange
+        case .kotlin:
+            return .purple
+        case .python:
+            return .blue
+        case .other:
+            return .gray
+        }
     }
 }

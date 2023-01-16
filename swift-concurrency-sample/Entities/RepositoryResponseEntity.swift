@@ -22,7 +22,7 @@ struct RepositoryEntity: Decodable, Hashable, Identifiable {
     let name: String
     let description: String
     let starCount: Int
-    let language: ProgrammingLanguage
+    let programmingLanguage: ProgrammingLanguage
     let user: UserEntity
 
     private enum CodingKeys: String, CodingKey {
@@ -30,7 +30,7 @@ struct RepositoryEntity: Decodable, Hashable, Identifiable {
         case name
         case description
         case starCount = "stargazersCount"
-        case language
+        case programmingLanguage = "language"
         case user = "owner"
     }
 }

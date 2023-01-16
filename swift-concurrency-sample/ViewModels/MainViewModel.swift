@@ -11,7 +11,6 @@ import UIKit
 final class MainViewModel {
     /// TODO: typealiasの設定
     var repositories: (NSDiffableDataSourceSnapshot<ProgrammingLanguageSection, ProgrammingLanguageItem>) -> Void = { _ in }
-    var users: (NSDiffableDataSourceSnapshot<Section, Section>) -> Void = { _ in }
     var showError: (ApiError) ->  Void = { _ in }
 
     nonisolated func fetchRepositories() async {

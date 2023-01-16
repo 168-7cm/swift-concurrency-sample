@@ -7,33 +7,6 @@
 
 import UIKit
 
-enum Language: String, Decodable, CaseIterable {
-    case swift
-    case kotlin
-    case python
-    case other
-
-    var displayText: String {
-        return self.rawValue.capitalized
-    }
-
-    /// プログラミング言語を全て列挙したらキリがないので、4つほどにする
-    init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        let value = try container.decode(String.self)
-        switch value {
-        case "Swift":
-            self = .swift
-        case "Kotin":
-            self = .kotlin
-        case "Python":
-            self = .python
-        default:
-            self = .other
-        }
-    }
-}
-
 struct RepositoryResponseEntity: Decodable {
     let totalCount: Int
     let repositories: [RepositoryEntity]
@@ -49,7 +22,7 @@ struct RepositoryEntity: Decodable, Hashable, Identifiable {
     let name: String
     let description: String
     let starCount: Int
-    let language: Language
+    let language: ProgrammingLanguage
     let user: UserEntity
 
     private enum CodingKeys: String, CodingKey {
